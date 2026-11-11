@@ -1,12 +1,14 @@
 // ================= PLACEHOLDER: ISI SEMUA NILAI "GANTI" =================
 // 1) Firebase Console > Project settings > Your apps (Web) > salin firebaseConfig
 export const FIREBASE_CONFIG = {
-  apiKey: "GANTI-API-KEY",
-  authDomain: "GANTI-NAMA-PROYEK.firebaseapp.com",
-  databaseURL: "https://GANTI-NAMA-PROYEK-default-rtdb.firebaseio.com",
-  projectId: "GANTI-NAMA-PROYEK",
-  appId: "GANTI-APP-ID",
-};
+    apiKey: "AIzaSyCOFLGtj5qEfk1bMviuywQz5k7sJ633Cq8",
+    authDomain: "canvalivetiktok.firebaseapp.com",
+    databaseURL: "https://canvalivetiktok-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "canvalivetiktok",
+    storageBucket: "canvalivetiktok.firebasestorage.app",
+    messagingSenderId: "1090669725027",
+    appId: "1:1090669725027:web:b6c66d2a538d9cab7b3f56"
+  };
 
 // 2) Cloudinary > Settings > Upload > Upload presets (mode Unsigned)
 //    Buat 3 preset (batasi ukuran & format di dashboard, lihat README):
