@@ -13,20 +13,19 @@ export const FIREBASE_CONFIG = {
 // 2) Cloudinary > Settings > Upload > Upload presets (mode Unsigned)
 //    Buat 3 preset (batasi ukuran & format di dashboard, lihat README):
 export const CLOUDINARY = {
-  cloudName: "GANTI-CLOUD-NAME",
-  presetImage: "GANTI-preset-gambar",   // max 2 MB, format png/webp
-  presetAudio: "GANTI-preset-suara",    // resource type video, max 1 MB, max 5 dtk
-  presetVideo: "GANTI-preset-video",    // max 8 MB, max 10 dtk
+  cloudName: "dvjfrrusn",
+  presetImage: "canvalive_image",
+  presetAudio: "canvalive_image",
+  presetVideo: "canvalive_image",
 };
-
 // 3) Nama TikTok streamer (tampil di halaman viewer)
-export const STREAMER_NAME = "GANTI-USERNAME-STREAMER";
+export const STREAMER_NAME = "@sanz.adew";
 
 // 4) Saran MVP: stiker/gambar dulu. Aktifkan suara & video setelah stabil (konsep bagian 19).
 export const FEATURES = { image: true, sound: false, video: false };
 
 // 5) Model AI untuk moderasi BYOK (key milik viewer sendiri, disimpan di browser mereka)
-export const GEMINI_MODEL = "gemini-2.0-flash";
+export const GEMINI_MODEL = "gemini-2.5-flash";
 
 // Batas (jangan diubah tanpa mengubah aplikasi Android juga)
 export const LIMITS = {
