@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Admin CanvaLive</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><h1>🛠 Admin Streamer</h1><p id="who">Belum masuk</p></header>
+<main>
+  <div class="card" id="login">
+    <h2>Masuk</h2>
+    <label>Email admin</label><input id="em" type="email" autocapitalize="none">
+    <label>Password</label><input id="pw" type="password">
+    <button class="b" id="go">Masuk</button>
+  </div>
+  <div id="app" hidden>
+    <section class="tab" id="t-gift"><div id="giftbox"></div></section>
+    <section class="tab" id="t-approve" hidden><div id="apprbox"></div></section>
+    <section class="tab" id="t-ctrl" hidden><div id="ctrlbox"></div></section>
+  </div>
+</main>
+<nav class="tabs" hidden></nav>
+<script type="module" src="js/admin.js"></script>
+</body></html>

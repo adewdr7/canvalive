@@ -1,0 +1,57 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "gift_catalog": { ".read": true, ".write": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'" },
+    "gift_map": { ".read": true, ".write": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'" },
+    "lottie_per_gift": { ".read": true, ".write": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'" },
+    "settings": { ".read": true, ".write": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'" },
+    "commands": { ".read": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'", ".write": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'" },
+
+    "users": {
+      "$u": {
+        ".read": true,
+        ".write": "(auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com') || (!data.exists() && newData.child('verified').val() == false)"
+      }
+    },
+
+    "custom_effects": {
+      ".read": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'",
+      "$u": {
+        ".read": true,
+        "$t": {
+          ".write": "(auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com') || (newData.child('status').val() == 'pending' && newData.child('verified').val() == false)"
+        }
+      }
+    },
+
+    "unlocked": {
+      "$u": {
+        ".read": true,
+        ".write": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'",
+        "in_game_slots": { ".write": "newData.isNumber() && data.exists() && newData.val() == data.val() - 1 && newData.val() >= 0" },
+        "fisikal_slots": { ".write": "newData.isNumber() && data.exists() && newData.val() == data.val() - 1 && newData.val() >= 0" }
+      }
+    },
+
+    "perintah_queue": {
+      ".read": true,
+      ".indexOn": ["username"],
+      "$id": {
+        ".write": "(auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com') || (!data.exists() && newData.child('status').val() == 'queued' && newData.child('text').isString() && newData.child('text').val().length <= 60 && (newData.child('type').val() == 'in_game' || newData.child('type').val() == 'fisikal') && !newData.child('source').exists())"
+      }
+    },
+
+    "vote_session": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email == 'GANTI-EMAIL-ADMIN@gmail.com'",
+      "candidates": {
+        "$u": { ".write": "!data.exists() && newData.child('text').isString() && newData.child('text').val().length <= 60 && root.child('users').child($u).child('verified').val() == true" }
+      },
+      "votes": {
+        "$u": { ".write": "!data.exists() && newData.isString() && root.child('users').child($u).child('verified').val() == true" }
+      }
+    }
+  }
+}

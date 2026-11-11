@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CanvaLive</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><h1>🎮 Interaksi Live</h1><p id="sub"></p></header>
+<main>
+  <section class="tab" id="t-daftar">
+    <div class="card"><h2>1. Daftar</h2>
+      <label>Username TikTok kamu</label><input id="uname" placeholder="@username" autocapitalize="none">
+      <button class="b" id="btnReg">Daftar / Masuk</button>
+      <div id="regBox" hidden>
+        <p class="muted">Ketik kode ini di <b>chat live</b> saat streamer LIVE, dari akun TikTok kamu:</p>
+        <div class="code" id="code"></div>
+        <p id="vstat" class="warn">⏳ Menunggu verifikasi…</p>
+      </div></div>
+    <div class="card"><h2>2. Moderasi AI (opsional)</h2>
+      <p class="muted">Tempel API Key Gemini milikmu (gratis di aistudio.google.com). Disimpan hanya di browser ini, tidak dikirim ke server. Tanpa key, upload menunggu approve manual streamer.</p>
+      <input id="key" type="password" placeholder="API Key Gemini">
+      <div class="row"><button class="b g" id="keySave">Simpan</button><button class="b g" id="keyDel">Hapus</button></div>
+      <p class="muted" id="keyState"></p></div>
+  </section>
+
+  <section class="tab" id="t-efek" hidden>
+    <div class="card"><h2>Efek custom</h2>
+      <p class="muted">Tanpa efek custom pun kamu tetap dapat efek default saat gift. Custom = bonus.</p>
+      <label>Jenis efek</label><select id="etype"></select>
+      <label>Gift pemicu</label><select id="egift"></select>
+      <div id="variants"></div>
+      <button class="b g" id="addVar">+ Tambah varian (acak)</button>
+      <button class="b" id="sendFx">Kirim untuk disetujui</button>
+      <p class="muted" id="fxMsg"></p></div>
+  </section>
+
+  <section class="tab" id="t-perintah" hidden>
+    <div id="slots" class="card"></div>
+  </section>
+
+  <section class="tab" id="t-vote" hidden><div id="votebox" class="card"></div></section>
+
+  <section class="tab" id="t-status" hidden><div id="statusbox"></div></section>
+</main>
+<nav class="tabs"></nav>
+<script type="module" src="js/viewer.js"></script>
+</body></html>
